@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+</head>
+
+<body>
+
+<h3>Vordefinierte Befehle (prompt und alert)</h3>
+
+<p> Text vor der Scriptabarbeitung </p>
+
+<script>
+    const zahl = window.prompt("bitte geben Sie eine Zahl ein");
+    let quadrat = zahl * zahl;
+    window.alert(zahl + " hoch 2 ergibt " + quadrat + "!");
+    const antwort = confirm("Wollen Sie das wirklich?");
+    document.write("<br />" + quadrat);
+</script>
+
+<script>
+    document.write("<br />Antwort=" + antwort + "<br />");
+    document.write("<br />" + quadrat);
+</script>
+
+<p>Text nach der Scriptabarbeitung</p>
+
+</body>
+
+</html>
