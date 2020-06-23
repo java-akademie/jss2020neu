@@ -9,25 +9,28 @@
 </head>
 
 <body>
+    <!-- === nur waehrend der Entwicklungsphase === -->
+    <div id="error" style="color: red; font-size: 30px"></div>
+    <!-- === nur waehrend der Entwicklungsphase === -->
 
-<h3>Vordefinierte Befehle (prompt und alert)</h3>
+    <h3>Vordefinierte Befehle (prompt und alert)</h3>
 
-<p> Text vor der Scriptabarbeitung </p>
+    <p> Text vor der Scriptabarbeitung </p>
 
-<script>
-    const zahl = window.prompt("bitte geben Sie eine Zahl ein");
-    let quadrat = zahl * zahl;
-    window.alert(zahl + " hoch 2 ergibt " + quadrat + "!");
-    const antwort = confirm("Wollen Sie das wirklich?");
-    document.write("<br />" + quadrat);
-</script>
+    <script>
+        const zahl = window.prompt("bitte geben Sie eine Zahl ein");
+        let quadrat = zahl * zahl;
+        window.alert(zahl + " hoch 2 ergibt " + quadrat + "!");
+        const antwort = confirm("Wollen Sie das wirklich?");
+        document.write("<br />" + quadrat);
+    </script>
 
-<script>
-    document.write("<br />Antwort=" + antwort + "<br />");
-    document.write("<br />" + quadrat);
-</script>
+    <script>
+        document.write("<br />Antwort=" + antwort + "<br />");
+        document.write("<br />" + quadrat);
+    </script>
 
-<p>Text nach der Scriptabarbeitung</p>
+    <p>Text nach der Scriptabarbeitung</p>
 
 </body>
 

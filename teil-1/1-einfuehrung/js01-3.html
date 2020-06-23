@@ -10,9 +10,13 @@
 
 
 <body>
-<h3>Vordefinierte Befehle</h3>
+    <!-- === nur waehrend der Entwicklungsphase === -->
+    <div id="error" style="color: red; font-size: 30px"></div>
+    <!-- === nur waehrend der Entwicklungsphase === -->
 
-<input type="button" value="Quadrat berechnen" onclick='
+    <h3>Vordefinierte Befehle</h3>
+
+    <input type="button" value="Quadrat berechnen" onclick='
         let zahl=window.prompt("Zahl eingeben");
         let quadrat=zahl*zahl;
         window.alert(zahl + " hoch 2 ergibt " + quadrat +"!");

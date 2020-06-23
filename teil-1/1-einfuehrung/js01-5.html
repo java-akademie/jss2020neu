@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+</head>
+
+<body>
+    <!-- === nur waehrend der Entwicklungsphase === -->
+    <div id="error" style="color: red; font-size: 30px"></div>
+    <!-- === nur waehrend der Entwicklungsphase === -->
+
+    <h3>Onerror</h3>
+    <h5>mit use strict muessen Variablen mit var oder let deklariert sein</h5>
+    <script>
+        'use strict';
+        document.write("a=");
+        a = 5;
+        document.write(a);
+    </script>
+
+    <h5>mehrfache Deklaration mit let ist nicht erlaubt 1</h5>
+    <script>
+        document.write("b=");
+        let b = 9;
+        document.write(b);
+    </script>
+
+    <h5>mehrfache Deklaration mit let ist nicht erlaubt 2</h5>
+    <script>
+        document.write("b=");
+        let b = 13;
+        document.write(b);
+    </script>
+
+</body>
+
+
+</html>
