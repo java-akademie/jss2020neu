@@ -11,4 +11,44 @@
 </head>
 
 
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <h3>for-Schleife</h3>
+
+    <h5>Roulett - Zahlen von 0 bis 36</h5>
+
+    <script>
+        for (let i = 1; i < 37; i++) {
+            document.write(getZufallszahl(0, 37) + " ");
+        }
+    </script>
+
+    <h5>Roulett - Statistik</h5>
+
+    <script>
+        const MAX = 37000000;
+
+        writeln(MAX + " Wuerfe");
+        writeln("Eine gleichmaessige Verteilung waeren " +
+            runden(1 / 37 * 100, 10) + " Prozent");
+        writeln("");
+
+        let tab = new Array(37);
+        tab.fill(0);
+
+        for (let i = 1; i <= MAX; i++) {
+            let zahl = getZufallszahl(0, 36);
+            tab[zahl]++;
+        }
+
+        writeln("<code>");
+        for (let i = 0; i <= 36; i++) {
+            let proz = runden(tab[i] / MAX * 100, 6);
+            writeln(form(i, 2, "0") + "/" + form(tab[i], 7, "0") + " :: " + proz);
+        }
+        writeln("</code>");
+    </script>
+</body>
+
+
 </html>

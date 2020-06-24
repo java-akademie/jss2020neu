@@ -11,4 +11,78 @@
 </head>
 
 
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h5>if-else</h5>
+    <script>
+        let alter = prompt("geben Sie Ihr Alter ein");
+        if (alter >= 18) {
+            writeln("Sie dürfen Alkohol kaufen");
+        } else {
+            writeln("du darfst keinen Alkohol kaufen");
+        }
+    </script>
+
+
+    <h5>switch</h5>
+    <script>
+        let note = prompt("geben Sie Ihre Note ein");
+        switch (note) {
+            case "6":
+                writeln("Sehr gut");
+                break;
+            case "5":
+                writeln("Gut");
+                break;
+            case "4":
+                writeln("Zufiedenstellend");
+                break;
+            case "3":
+            case "2":
+            case "1":
+                writeln("Mit der Note " + note + " kommen Sie nicht weiter");
+                break;
+            default:
+                writeln("falsche Note eingegeben");
+        }
+    </script>
+
+
+    <h5>terniärer Operator</h5>
+    <script>
+        let n5a = 5,
+            n5b = 5,
+            s5a = "5",
+            s5b = "5";
+        let n6a = 6,
+            n6b = 6,
+            s6a = "6",
+            s6b = "6";
+        writeln("");
+        ausgebenEval("n5a==n5b");
+        ausgebenEval("n5a!=n5b");
+        ausgebenEval("n5a===n5b");
+        ausgebenEval("n5a!==n5b");
+        writeln("");
+        ausgebenEval("n5a==s5b");
+        ausgebenEval("n5a!=s5b");
+        ausgebenEval("n5a===s5b");
+        ausgebenEval("n5a!==s5b");
+        writeln("");
+        ausgebenEval("n5a<=n6b");
+        ausgebenEval("n5a<=s6b");
+        writeln("");
+        ausgebenEval("n5a>=n6b");
+        ausgebenEval("n5a>=s6b");
+        writeln("");
+        ausgebenEval("n5a>=n6a?n5a:n6b");
+        ausgebenEval("n5a<=n6a?n5a:n6b");
+        ausgebenEval("n5a > n6a?n5a:n6b");
+        ausgebenEval("n5a < n6a?n5a:n6b");
+    </script>
+
+</body>
+
+
 </html>

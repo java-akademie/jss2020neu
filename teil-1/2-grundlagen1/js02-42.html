@@ -11,4 +11,36 @@
 </head>
 
 
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>while-Schleife</h3>
+
+    <h5>Roulett spielen</h5>
+
+    <script>
+        let gesetzteZahl = parseInt(prompt("auf welche Zahl wollen Sie setzen" +
+            "\nmein Vorschlag", getZufallszahl(0, 37)));
+        let anzahlSpiele = 1;
+        let verloreneSpiele = 0;
+        let zufall = getZufallszahl(0, 37);
+
+        while (zufall !== gesetzteZahl) {
+            verloreneSpiele++;
+            anzahlSpiele++;
+            zufall = getZufallszahl(0, 37);
+        }
+
+        writeln("Sie haben " + verloreneSpiele + " mal verloren")
+        writeln("gewonnen beim Spiel " + anzahlSpiele);
+
+        let ergebnis = 36 - anzahlSpiele;
+
+        writeln("Sie haben " + Math.abs(ergebnis) +
+            ((ergebnis >= 0) ? " gewonnen" : " verloren"));
+    </script>
+
+</body>
+
+
 </html>
