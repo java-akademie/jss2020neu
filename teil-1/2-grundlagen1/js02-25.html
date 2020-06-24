@@ -11,5 +11,33 @@
 </head>
 
 
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h5>Bitwise Operators</h5>
+
+    <script>
+        let a = 22,
+            b = 12,
+            c = 0;
+
+        c = a & b;
+        binAusg3("c=a & b", a, b, c);
+
+        c = a | b;
+        binAusg3("c=a | b", a, b, c);
+
+        c = a ^ b;
+        binAusg3("c=a ^ b", a, b, c);
+
+        binAusg2("c=~(i*1)", 1);
+        binAusg2("c=~(i*-1)", -1);
+
+        binAusg2("c=~(i*-1)", 1023);
+        binAusg2("c=~(i*-1)", -1023);
+    </script>
+
+</body>
+
 
 </html>

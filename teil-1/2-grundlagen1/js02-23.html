@@ -11,5 +11,35 @@
 </head>
 
 
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <script>
+        ueberschrift("Decrement/Increment ");
+
+        w = 5;
+        writeln("w=" + w);
+        erg = w++;
+        writeln("erg = w++ :: " + erg);
+        erg = ++w;
+        writeln("erg = ++w :: " + erg);
+
+        writeln(erg + " " + erg++ + " " + erg);
+        writeln(erg + " " + ++erg + " " + erg);
+
+        writeln("w=" + w);
+
+        erg = w--;
+        writeln("erg = w-- :: " + erg);
+
+        erg = --w;
+        writeln("erg = --w :: " + erg);
+
+        writeln(erg + " " + erg-- + " " + erg);
+        writeln(erg + " " + --erg + " " + erg);
+    </script>
+
+</body>
+
 
 </html>

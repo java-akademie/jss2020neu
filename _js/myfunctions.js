@@ -46,6 +46,7 @@ function ausgeben(name, value) {
 
 
 
+
 /**
  * ausgeben einer fetten Überschrift
  */
@@ -59,4 +60,55 @@ function ueberschrift(text) {
 function ausgebenEval(ausdruck) {
     let erg = eval(ausdruck);
     document.write(ausdruck + " :: " + typeof(erg) + " :: " + erg + "<br />");
+}
+
+
+/**
+ * ausgeben einer Zeile
+ */
+function writeln(text) {
+    document.write(text + "<br />");
+}
+
+
+/**
+ * Ausgabe Binärwert eines Dezimalwertes
+ * 64-stellig mit vorlaufenden Punkten 	z.B. ........110100101
+ */
+function binaerwertAusgeben(dezwert) {
+    let binaerwert = dezwert.toString(2);
+    let punkte = "";
+    for (var i = 1; i <= 64 - binaerwert.length; i++) {
+        punkte = punkte + ".";
+    }
+    let outp = punkte + binaerwert;
+    writeln("<code>" + outp + "  " +
+        binaerwert.length + " " + dezwert + "</code>");
+}
+
+/**
+ * Ausgabe dreier Binärwerte mit Überschrift
+ */
+function binAusg3(ueb, a, b, c) {
+    ueberschrift(ueb);
+    writeln("<code>" + ".........x.........x.........x.........x.........x.........x...." +
+        "</code>");
+    binaerwertAusgeben(a);
+    binaerwertAusgeben(b);
+    binaerwertAusgeben(c);
+}
+
+/**
+ * Gegenüberstellung Binärwerte mit
+ * umgekehrten Bits
+ */
+function binAusg2(ueb, vz) {
+    ueberschrift(ueb);
+    writeln("<code>" + ".........x.........x.........x.........x.........x.........x...." +
+        "</code>");
+    for (let i = 0; i < 5; i++) {
+        binaerwertAusgeben(i * vz);
+        binaerwertAusgeben(~(i * vz));
+        writeln("");
+    }
 }
