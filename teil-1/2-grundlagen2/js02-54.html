@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Vorgabewerte fuer Argumente</h3>
+
+    <script>
+        function summe(w1 = 0, w2 = 0, w3 = 0, w4 = 0) {
+            console.log("summe");
+            ausgeben("w1", w1);
+            ausgeben("w2", w2);
+            ausgeben("w3", w3);
+            ausgeben("w4", w4);
+            return (w1 + w2 + w3 + w4);
+        }
+
+        writeln(summe(1, 2, 3)); // 6
+        writeln(summe(1, 2, "3")); // 330
+        writeln(summe(1, 2, 3, 4)); // 10
+        writeln(summe(1, 2, "3", 4)); // 334
+        writeln(summe(1)); // 1
+        writeln(summe("1")); // 1000
+        writeln(summe()); // 0
+    </script>
+
+</body>
+
+
+</html>

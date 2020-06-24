@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>asynchrone Funktion</h3>
+
+    <p>Analysieren Sie die Logs in der Console</p>
+
+    <script>
+        let f = function(s) {
+            log("f-Funktionalitaet");
+        }
+
+        setTimeout(f, 9000); // nach 9 Sekunden wird f gestartet
+        setTimeout(f, 2000); // nach 2 Sekunden wird f gestartet
+
+        setTimeout(function() {
+            log("7000 a1-Funktionalitaet")
+        }, 7000);
+
+        setTimeout(function() {
+            log("2000 a2-Funktionalitaet")
+        }, 2000);
+
+        let zaehler = 0;
+        let interval = setInterval(function() {
+            log("intervall: " + ++zaehler)
+        }, 1000);
+
+        setTimeout(function() {
+            clearInterval(interval)
+        }, 12000);
+
+        setTimeout(function() {
+            log("1000 a3-Funktionalitaet");
+        }, 1000);
+
+        setTimeout(f, 5000);
+        setTimeout(f, 500);
+
+        setTimeout(function() {
+            log("400 a2-Funktionalitaet")
+        }, 400);
+
+        writeln("Fertig ...");
+        log("Fertig ...");
+    </script>
+
+</body>
+
+</html>

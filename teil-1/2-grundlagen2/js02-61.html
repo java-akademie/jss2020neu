@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <h3>Arrays</h3>
+
+    <script>
+        let personen1 = ["hugo", "moritz", "fritz", "urs"];
+        personen1[7] = "hans";
+
+        ueberschrift("personen1");
+        writeln("anz: " + personen1.length + ";  " + personen1);
+
+        ueberschrift("personen1 - for (let i=0; i &lt; personen1.length; i++)");
+        for (let i = 0; i < personen1.length; i++) {
+            writeln(i + " :: " + personen1[i]);
+        };
+
+        ueberschrift("personen1 - for (key in personen1)");
+        for (key in personen1) {
+            writeln(key + " :: " + personen1[key]);
+        };
+    </script>
+
+
+    <script>
+        let personen2 = new Array(10);
+        personen2[0] = "meier";
+        personen2[1] = "gruber";
+        personen2[5] = "schuster";
+        personen2[7] = "baer";
+        personen2[9] = "gerber";
+        personen2[12] = "ludwig";
+
+        ueberschrift("personen2");
+        writeln("anz: " + personen2.length + ";  " + personen2);
+
+        ueberschrift("personen2 - for (key in personen2)");
+        for (key in personen2) {
+            writeln(key + " :: " + personen2[key]);
+        }
+    </script>
+
+    <script>
+        let personen3 = new Array("meier", "gruber", "schuster");
+        personen3["fritz 1"] = "fritz meier";
+        personen3["fritz 2"] = "fritz mueller";
+        personen3.hans1 = "hans dampf";
+        personen3.hans2 = "hans muster";
+
+        ueberschrift("personen3");
+        writeln("anz: " + personen3.length + ";  " + personen3);
+
+        ueberschrift("personen3 - for (let i=0; i &lt; personen3.length; i++)");
+        for (let i = 0; i < personen3.length; i++) {
+            writeln(personen3[i]);
+        };
+
+        ueberschrift("personen3 - for (key in personen3)");
+        for (key in personen3) {
+            writeln(key + " :: " + personen3[key]);
+        }
+    </script>
+
+</body>
+
+
+</html>

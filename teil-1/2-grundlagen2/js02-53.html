@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Aufruf einer Funktion mit mehr Parameter als Argumente</h3>
+
+    <h5>Loesung 1 - arguments</h5>
+
+    <script>
+        function summe1(a, b) {
+            let erg = NaN;
+            for (let i = 0; i < arguments.length; i++) {
+                if (i == 0)
+                    erg = arguments[i];
+                else
+                    erg += arguments[i];
+            }
+            return (erg + " ... " + typeof(erg));
+        }
+
+        writeln(summe1(1, 2));
+        writeln(summe1("1", 2));
+        writeln(summe1(1, 2, "3"));
+        writeln(summe1(1, 2, 3, 4));
+        writeln(summe1(1, 2, "3", 4));
+    </script>
+
+
+    <h5>Loesung 2 - ...restliche</h5>
+
+    <script>
+        function summe2(w1, w2, ...restliche) {
+            let erg = w1 + w2;
+            for (let i = 0; i < restliche.length; i++) {
+                erg += restliche[i];
+            }
+            return (erg + " ... " + typeof(erg));
+        }
+
+        writeln(summe2(1, 2));
+        writeln(summe2("1", 2));
+        writeln(summe2(1, 2, "3"));
+        writeln(summe2(1, 2, 3, 4));
+        writeln(summe2(1, 2, "3", 4));
+    </script>
+
+</body>
+
+
+</html>

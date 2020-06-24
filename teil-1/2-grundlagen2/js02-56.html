@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Callback Funktion</h3>
+
+    <script>
+        function run(callback) {
+            writeln("<b>run-Funktionalitaet</b>");
+            callback();
+        }
+    </script>
+
+    <h5>benannt</h5>
+
+    <script>
+        let f = function() {
+            writeln("callback-Funktionalitaet aus der benannten Funktion");
+        }
+        run(f);
+    </script>
+
+    <h5> anonym </h5>
+
+    <script>
+        run(function() {
+            writeln("callback-Funktionalitaet der anonymen Funktion");
+        });
+    </script>
+
+</body>
+
+
+</html>

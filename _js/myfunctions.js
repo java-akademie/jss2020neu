@@ -112,3 +112,14 @@ function binAusg2(ueb, vz) {
         writeln("");
     }
 }
+
+
+/**
+ * schreiben einer Ueberschrift <h1> bis <h5> Zeile
+ */
+function writehx(text, i = 5) {
+    if (!checkInteger(i)) i = 5;
+    else if (i < 1 || i > 5) i = 5;
+    else; // i bleibt wie’s ist	
+    document.write("<h" + i + ">" + text + "</h" + i + ">");
+}

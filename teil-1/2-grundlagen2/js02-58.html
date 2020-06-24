@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <h3>Auf ein Ereignis reagieren</h3>
+
+    <button id="klickMich">Klick Mich</button>
+    <br />
+    <script>
+        writeln("start js");
+        let counter = 0;
+
+        writeln("getElementById() klick mich wird reagieren")
+        document.getElementById("klickMich").addEventListener(
+            "click",
+            function() {
+                if (++counter <= 10) {
+                    console.log("du hast mich geklickt")
+                } else {
+                    writeln("du hast mich geklickt")
+                    writeln("urspruengliche seite wird ueberschrieben")
+                }
+            },
+            false // in diesem Beispiel egal ob true oder flase oder ueberhaupt
+        );
+        writeln("ende js");
+        console.log("ende js");
+    </script>
+
+    <p>
+        die Seite ist vollstaendig geladen
+        <br /> die anonyme Methode fuer KlickMich ist aber immer noch aktiv
+        <br /> wenn in dieser Methode ein document.writeln abgesetzt wird,
+        <br /> wird die Seite neu geschrieben
+    </p>
+
+</body>
+
+</html>

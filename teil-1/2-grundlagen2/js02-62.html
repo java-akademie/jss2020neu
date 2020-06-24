@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Array Funktionen</h3>
+
+    <script>
+        let p3 = []
+
+        writeln("new length: " + p3.push("11"));
+        writeln("new length: " + p3.push("12"));
+        writeln("new length: " + p3.push("13"));
+        writeln("<b>Personen: </b>" + p3);
+
+        writeln("new length: " + p3.unshift("1"));
+        writeln("new length: " + p3.unshift("2"));
+        writeln("new length: " + p3.unshift("3"));
+        writeln("<b>Personen: </b>" + p3);
+
+        writeln(p3.shift() + " geloescht");
+        writeln(p3.shift() + " geloescht");
+        writeln(p3.pop() + " geloescht");
+        writeln(p3.pop() + " geloescht");
+        writeln("<b>Personen: </b>" + p3);
+
+        writeln(p3.pop() + " geloescht");
+        writeln(p3.pop() + " geloescht");
+        writeln(p3.pop() + " geloescht");
+        writeln("<b>Anzahl Personen: </b>" + p3.length);
+
+        writeln("new length: " + p3.push("fritz"));
+        writeln("new length: " + p3.push("franz"));
+        writeln("new length: " + p3.push("max"));
+        writeln("<b>Personen: </b>" + p3);
+
+        let i = p3.indexOf("franz");
+        writeln("<b>Index of franz: </b>" + i);
+        let j = p3.indexOf("hugo");
+        writeln("<b>Index of hugo: </b>" + j);
+    </script>
+</body>
+
+
+</html>

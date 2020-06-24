@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <h3>Aufruf von Funktionen</h3>
+
+    <script>
+        function f1() {
+            writeln("");
+            writeln("f1 ohne Parameter, ohne return");
+        }
+
+        function f2(a1, a2) {
+            writeln("");
+            writeln("f2 mit Parameter, ohne return");
+            writeln("f2 (" + a1 + "/" + a2 + ")");
+        }
+
+        function f3() {
+            writeln("");
+            writeln("f3 ohne Parameter, mit return");
+            return "Rueckgabe aus f3()";
+        }
+
+        function f4(a1, a2) {
+            writeln("");
+            writeln("f4 mit Parameter, mit return");
+            writeln("f4 (" + a1 + "/" + a2 + ")");
+            return "Rueckgabe aus f4()  " + (a1 + a2);
+        }
+    </script>
+
+    <script>
+        let erg1 = f1();
+        writeln(erg1);
+        let erg2 = f2("xxx", 999);
+        writeln(erg2);
+        let erg3 = f3();
+        writeln(erg3);
+        let erg4 = f4(111, 222);
+        writeln(erg4);
+    </script>
+</body>
+
+
+</html>

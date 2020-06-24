@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <h3>Arrays Iteratioen</h3>
+    <script>
+        let personen = ["hugo", "moritz", "fritz", "urs"];
+        personen[7] = "hans";
+
+        writehx("for (let i = 0: i &lt; personen.length; i++)");
+        for (let i = 0; i < personen.length; i++) {
+            writeln(i + " " + personen[i]);
+        }
+
+        writehx("for (let key in personen)");
+        for (let key in personen) {
+            writeln(key + "  " + personen[key]);
+        }
+
+        writehx("for (person of personen)");
+        for (let person of personen) {
+            writeln(person);
+        }
+
+        writehx("Personen");
+        writeln(personen);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Arrays - Break und Continue</h3>
+
+    <script>
+        let werte = [163, 1025, 113, 235, 4711, 4931, 99, 15, 43, 24, 72];
+
+        writehx("alle Werte unter 1000 sollen verarbeitet werden");
+        for (let w of werte) {
+            if (w >= 1000)
+                continue;
+            writeln("Wert " + w + " wurde verarbeitet");
+        }
+
+        writehx("check ob es Werte über 4000 gibt");
+        let vorhanden = false;
+        for (let w of werte) {
+            if (w > 4000) {
+                vorhanden = true;
+                break;
+            }
+            writeln("Wert " + w);
+        }
+        writeln("Wert über 4000 vorhanden: " + vorhanden);
+    </script>
+
+</body>
+
+
+</html>

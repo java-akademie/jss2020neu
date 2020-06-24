@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Aufruf einer Funktion mit weniger Parameter als Argumente</h3>
+
+    <script>
+        function summe(w1, w2, w3, w4) {
+            log("summe");
+            ausgeben("w1", w1);
+            ausgeben("w2", w2);
+            ausgeben("w3", w3);
+            ausgeben("w4", w4);
+            const erg = w1 + w2 + w3 + w4;
+            log(erg);
+            log("------------");
+            return erg;
+        }
+        writeln(summe(1, 2, 3));
+        writeln(summe(1, 2, "3"));
+        writeln(summe(1, 2, 3, 4));
+        writeln(summe(1, 2, "3", 4));
+        writeln(summe(1));
+        writeln(summe("1"));
+        writeln(summe());
+    </script>
+
+</body>
+
+
+</html>

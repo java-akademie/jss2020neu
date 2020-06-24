@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Ojkekte</h3>
+
+    <script>
+        writehx("deklarieren & einfuegen");
+        let foo = {
+            1: "eins",
+            2: "zwei",
+            one: "eins",
+            two: "zwei",
+            "key 1": 1,
+            "key 2": 2,
+            key_1: 1,
+            key_2: 2
+        };
+        writeln(JSON.stringify(foo));
+
+        writehx("einfügen")
+        foo["key 3"] = 3;
+        let key4 = "key 4";
+        foo[key4] = 4;
+        foo.key5 = 5;
+        writeln(JSON.stringify(foo));
+
+        writehx("ausgeben");
+        writeln("foo.one      :: " + foo.one);
+        writeln('foo["one"]   :: ' + foo["one"]);
+        writeln('foo["key 4"] :: ' + foo["key 4"]);
+        writeln('foo[key4]    :: ' + foo[key4]);
+    </script>
+
+</body>
+
+
+</html>

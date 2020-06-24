@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <script>
+        function laenge(dict) {
+            let size = 0;
+            for (let key in dict) {
+                if (dict.hasOwnProperty(key)) size++;
+            }
+            return size;
+        }
+
+        function showKey(k) {
+            let len = k.length;
+            let punkte = "";
+            for (let i = 1; i <= 12 - len; i++) {
+                punkte += "."
+            }
+            return k + " " + punkte + " ";
+        }
+
+        function showDict(dict) {
+            writeln("<code>");
+            writeln("dict.length: " + laenge(dict));
+            console.log("\n---- dict.length: " + laenge(dict));
+            for (k in dict) {
+                console.log(showKey(k),
+                    typeof dict[k], " :: ",
+                    dict[k], "::",
+                    JSON.stringify(dict[k]));
+                writeln(showKey(k) +
+                    typeof dict[k] + " :: " +
+                    dict[k] + " :: " +
+                    JSON.stringify(dict[k]));
+            }
+            writeln("</code>");
+        }
+    </script>
+
+    <h3>Ojkekte</h3>
+
+    <script>
+        writehx("deklarieren");
+        let dict = {
+            x: {
+                a: 5,
+                b: 7
+            },
+            y: [5, 6, 7, 8],
+            111: "hundertelf",
+            haus: "house",
+            gut: "good",
+            schlecht: "bad",
+            falsch: false,
+            eins: 1,
+            "xx yy": "leerzeichen im key"
+        };
+        showDict(dict);
+
+        writehx("einfügen1");
+        dict.haus = "new house";
+        dict.s1 = "s1-value";
+        dict.heute = "today";
+        dict.zwei = "two";
+        dict.drei = "three";
+        dict[1000] = "thousand";
+        let einhundert = 100;
+        dict[einhundert] = "one Hundred";
+        dict.s2 = "s2-value";
+        showDict(dict);
+
+        writehx("10 Werte einfügen");
+        for (let i = 1; i <= 10; i++) {
+            dict[i] = "value-" + i;
+        }
+        showDict(dict);
+
+        writehx("Einträge löschen");
+        delete dict.house;
+        delete dict[1000];
+        delete dict.einhundert;
+        delete dict["xx yy"];
+        delete dict[1];
+        delete dict["2"];
+        let x3 = 3;
+        let x4 = "4";
+        delete dict[x3];
+        delete dict[x4];
+        showDict(dict);
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Anonyme Funktion</h3>
+
+    <script>
+        let fvar = function(w1 = 0, w2 = 0, w3 = 0, w4 = 0) {
+            return (w1 + w2 + w3 + w4);
+        }
+
+        console.log("fvar: " + fvar);
+
+        writeln(fvar(1, 2, 3));
+        writeln(fvar(1, 2, "3"));
+        writeln(fvar(1, 2, 3, 4));
+        writeln(fvar(1, 2, "3", 4));
+        writeln(fvar(1));
+        writeln(fvar("1"));
+        writeln(fvar());
+        writeln(fvar("xxx"));
+        writeln("-----");
+        writeln(fvar);
+    </script>
+
+</body>
+
+
+</html>
