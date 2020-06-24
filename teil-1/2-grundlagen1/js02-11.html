@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <h3>Variablen Deklaration</h3>
+
+    <h5>kein var/let/const mit use strict - nicht OK</h5>
+    <script>
+        'use strict';
+        let a = 5; // ohne let NOK
+        log("log1:", a)
+    </script>
+
+    <h5>Mehrfach -/var kein let/const mit/ohne use strict - OK</h5>
+    <script>
+        //'use strict';
+        b = 5;
+        b = 7;
+        log("log2:", b);
+        var b = 8;
+        var b = 9;
+        log("log3:", b);
+    </script>
+
+    <h5>Mehrfach mit let/const - nicht OK</h5>
+    <script>
+        let i = 4711;
+        const j = 42;
+        // let i = 0;	// nicht erlaubt
+        // const i = 0; // nicht erlaubt
+        // let j = 0; 	// nicht erlaubt
+        //const j = 0;  // nicht erlaubt
+        log("gog4:", i, j);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Scope</h3>
+    <p>Analysieren Sie die Logs in der Console</p>
+
+    <script>
+        function foo3() {
+            gg1 = 141;
+            var gg2 = 142;
+            let gg3 = 143;
+            const gg4 = 144;
+
+            log("in foo3()");
+            log(".... gg1=" + gg1);
+            log(".... gg2=" + gg2);
+            log(".... gg3=" + gg3);
+            log(".... gg4=" + gg4);
+            log(".... gg5=" + gg5);
+        }
+
+        function foo2() {
+            gg5 = 5555;
+            log("in foo2()");
+            log(".... gg1=" + gg1);
+            log(".... gg2=" + gg2);
+            log(".... gg3=" + gg3);
+            log(".... gg4=" + gg4);
+            log(".... gg5=" + gg5);
+        }
+
+        function foo1() {
+            var i = 55;
+            // LOCAL - nur in der Funktion fname() sichtbar
+            // verdeckt die globale Variable i=4711
+            log(i);
+
+            foo2();
+
+            let j = 4713;
+            // LOCAL - nur in der Funktion fname() sichtbar
+            log(j);
+
+            log("in der folgenden for Schleife wird i=55 verdeckt");
+            for (let i = 1; i <= 5; i++) {
+                // i ist LOCAL – nur in der for-Schleife sichtbar
+                // verdeckt die lokale Varibale i=55
+                log(i);
+            }
+
+            log("in der folgenden for Schleife wird j=4713 verdeckt");
+            for (let j = 1; j <= 5; j++) {
+                // j LOCAL in der gesamten Funktion fname() sichtbar
+                // Problem mit der Deklaration let j = 4713
+                log(j);
+            }
+
+            log(`nach den beiden Schleifen i=${i} j=${j}`);
+        }
+    </script>
+
+    <script>
+        log("----------------- start ----------------");
+        gg1 = 41;
+        var gg2 = 42;
+        let gg3 = 43;
+        const gg4 = 44;
+        foo2();
+        foo3();
+
+        let i = 4711; // GLOBAL sichtbar
+        log(`vor Eintritt in die Funktione fname() i=${i}`);
+        foo1();
+        log(`nach fname() i=${i}`);
+        log("----------------- stopp ----------------");
+    </script>
+
+</body>
+
+
+</html>

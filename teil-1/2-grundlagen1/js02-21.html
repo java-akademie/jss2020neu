@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+</head>
+
+
+<body>
+
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Verknuepfung von Variablen</h3>
+
+
+
+    <script>
+        let n1 = 3;
+        let n2 = 5;
+        ueberschrift("n1=" + typeof(n1) + "=" + n1 +
+            " :::: n2=" + typeof(n2) + "=" + n2);
+        ausgebenEval("n1 + n2");
+        ausgebenEval("n1 - n2");
+        ausgebenEval("n1 * n2");
+        ausgebenEval("n1 / n2");
+        ausgebenEval("n1 % n2");
+        ausgebenEval("n1 += 2");
+        ausgebenEval("n1 -= 130");
+        ausgebenEval("n2 <<= 2");
+    </script>
+
+    <script>
+        let s1 = "13aaa";
+        let s2 = "5";
+        ueberschrift("s1=" + typeof(s1) + "=" + s1 +
+            " :::: s2=" + typeof(s2) + "=" + s2);
+
+        ausgebenEval("s1 + s2");
+        ausgebenEval("s1 - s2");
+        ausgebenEval("s1 * s2");
+        ausgebenEval("s1 / s2");
+        ausgebenEval("s1 % s2");
+        ausgebenEval("s1 += 2");
+        ausgebenEval("s1 -= 2");
+
+        ausgebenEval("s2 += 5");
+        ausgebenEval("s2 += 5");
+        ausgebenEval("s2 += 5.5");
+    </script>
+
+</body>
+
+
+</html>

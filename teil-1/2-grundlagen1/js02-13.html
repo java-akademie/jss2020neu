@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+</head>
+
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <h3>Typen von Variablen</h3>
+    <script>
+        let b = true; // Boolean
+        let i = 5; // Number
+        let d = 5.25; // Number
+        let o = new Date(); // Object
+        let s = "text"; // String
+        let n = null; // Object
+
+        let f = function(text) {
+            document.write(text);
+        };
+
+        ausgeben("b bool", b);
+        ausgeben("i ganzzahl", i);
+        ausgeben("d dezimalzahl", d);
+        ausgeben("o Date", o);
+        o = "kein Date mehr";
+        ausgeben("o", o)
+        ausgeben("s Text", s);
+        ausgeben("n null", n);
+        console.log("---");
+        ausgeben("f Function", f);
+
+        f("aufruf der function ueber die variable f");
+    </script>
+
+</body>
+
+
+
+</html>

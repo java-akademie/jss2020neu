@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+<body>
+
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Variable auf numerisch pruefen</h3>
+
+    <script>
+        function chInt(s) {
+            if (checkInteger(s))
+                document.write(s + " <br />");
+            else {
+                document.write(s + " is not an Integer <br />");
+            }
+        }
+
+        function chFloat(s) {
+            if (checkFloat(s))
+                document.write(s + " <br />");
+            else
+                document.write(s + " is not a Float <br />");
+        }
+
+        function chAllInts(s) {
+            if (allInteger(s))
+                document.write(s + " <br />");
+            else
+                document.write(s + " is not all Integers <br />");
+        }
+    </script>
+
+
+    <script>
+        let w1 = "112",
+            w2 = "125.25",
+            w3 = "25abc",
+            w4 = "25.45xyz",
+            w5 = "urs",
+            w6 = "",
+            w7 = null,
+            w8 = "12e34",
+            w9 = "12e34xyz",
+            w10 = "123.2e3",
+            w11 = "123.2e3aa",
+            w12 = Date(),
+            w13 = [3, 4, 5],
+            w14 = {
+                name: "hugo"
+            },
+            w15 = -123234,
+            w16 = +123234;
+    </script>
+
+    <h5>check Integer</h5>
+    <script>
+        chInt(w1);
+        chInt(w2);
+        chInt(w3);
+        chInt(w4);
+        chInt(w5);
+        chInt(w6);
+        chInt(w7);
+        chInt(w8);
+        chInt(w9);
+        chInt(w10);
+        chInt(w11);
+        chInt(w12);
+        chInt(w13);
+        chInt(w14);
+        chInt(w15);
+        chInt(w16);
+    </script>
+
+    <h5>check Float</h5>
+    <script>
+        chFloat(w1);
+        chFloat(w2);
+        chFloat(w3);
+        chFloat(w4);
+        chFloat(w5);
+        chFloat(w6);
+        chFloat(w7);
+        chFloat(w8);
+        chFloat(w9);
+        chFloat(w10);
+        chFloat(w11);
+        chFloat(w12);
+        chFloat(w13);
+        chFloat(w14);
+        chFloat(w15);
+        chFloat(w16);
+    </script>
+
+    <h5>check all Integers</h5>
+    <script>
+        chAllInts(w1);
+        chAllInts(w2);
+        chAllInts(w3);
+        chAllInts(w4);
+        chAllInts(w5);
+        chAllInts(w6);
+        chAllInts(w7);
+        chAllInts(w8);
+        chAllInts(w9);
+        chAllInts(w10);
+        chAllInts(w11);
+        chAllInts(w12);
+        chAllInts(w13);
+        chAllInts(w14);
+        chAllInts(w15);
+        chAllInts(w16);
+    </script>
+</body>
+
+</html>
