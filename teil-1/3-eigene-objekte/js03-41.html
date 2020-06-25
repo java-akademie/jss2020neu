@@ -12,27 +12,74 @@
 
 
 <body>
-    <div id="error" style="color: red; font-size: 20px"></div>
+<div id="error" style="color: red; font-size: 20px"></div>
 
-    <script>
-        function check(p){
-            writeln(p + "  "+ checkInteger(p))
-        }
-        check(1)
-        check("1")
-        check("                  1")
-        check("1 ")
-        check(" 1.5              ")
-        check(" hugo ")
-        check(1)
-        check(null)
-        check("     000123            ")
+<h3>Vererbung1</h3>
 
-        writeln(allInteger("999999999999999999999"))
-        writeln(allInteger("12345"))
+<script>
+    // die Klasse Person
+    function Person(name, addr) {
+        // Attribute
+        this.name = name;
+        this.addr = addr;
+
+        // Methoden
+
+        this.toString = () => {
+            let s = "";
+            s += (this.name === undefined ? "-" : this.name) + " / ";
+            s += (this.addr === undefined ? "-" : this.addr) + "";
+            return s;
+        };
+
+        this.personToString = this.toString;
+    }
+</script>
 
 
-    </script>
+<script>
+    // die Superklasse der Klasse Student
+    Student.prototype = new Person();
+
+    // die Klasse Student
+    function Student(name, addr, matrikelnummer) {
+        // Attribute
+        this.constructor(name, addr);
+        this.matrikelnummer = matrikelnummer;
+
+        // Methoden
+        this.toString = () => {
+            let s = "";
+            s += this.personToString() + " / ";
+            s += (this.matrikelnummer === undefined ?
+                "-" : this.matrikelnummer);
+            return s;
+        };
+
+
+         this.studentToString = this.toString;
+    }
+</script>
+
+<script>
+    writehx("drei Personen")
+    let p1 = new Person("fritz", "stuttgart");
+    let p2 = new Person("hugo", "basel");
+    let p3 = new Person("hans", "wien");
+    document.writeln(p1 + "<br />");
+    document.writeln(p2.toString() + "<br />");
+    document.writeln(p3.personToString() + "<br />");
+
+    writehx("drei Studenten")
+    let s1 = new Student("albert", "bern", 4711)
+    let s2 = new Student("carl-gustav", "bern", 4712)
+    let s3 = new Student("adam", "bern", 4713)
+    document.writeln(s1 + "<br />");
+    document.writeln(s2.toString() + "<br />");
+    document.writeln(s3.studentToString() + "<br />");
+</script>
+
 </body>
+
 
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+
+    <script src="./klassen-prototypen/Adresse.js"></script>
+    <script src="./klassen-prototypen/Person.js"></script>
+    <script src="./klassen-prototypen/Student.js"></script>
+
+</head>
+
+
+<body>
+<div id="error" style="color: red; font-size: 20px"></div>
+
+<h3>Vererbung2</h3>
+
+<script>
+    writehx("zwei Personen");
+
+    let a1 = new Adresse("berlin", "gartenstrasse 12");
+    let a2 = new Adresse("basel", "gerbergasse 17");
+    document.writeln(a1 + "<br />");
+    document.writeln(a2 + "<br />");
+    let p1 = new Person("fritz", 5045.30, a1);
+    let p2 = new Person("hugo", 7845.20, a2);
+    document.writeln(p1 + "<br />");
+    document.writeln(p2 + "<br />");
+
+    writehx("zwei Studenten")
+    let s1 = new Student("albert", 3456, a1, 4711)
+    let s2 = new Student("carl-gustav", 12345.30, a2, 4712)
+    let s3 = new Student("anonymous");
+    document.writeln(s1 + "<br />");
+    document.writeln(s2 + "<br />");
+    document.writeln(s3 + "<br />");
+</script>
+
+</body>
+
+
+</html>

@@ -16,5 +16,5 @@ function Adresse(ort, strasse) {
         s += (this.strasse === undefined ? "strasse-na" : this.strasse);
         return s;
     };
-    this.adresseToString = this.toString;
+    //this.adresseToString = this.toString;
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+
+    <script src="./klassen-oo/BankKonto2.js"></script>
+</head>
+
+
+<body>
+<div id="error" style="color: red; font-size: 20px"></div>
+
+<h3>Bankkonto 2</h3>
+
+<script>
+    let konto = new BankKonto("Max Mustermann");
+    konto.einzahlen(10000);
+    writeln(konto);
+
+    for (let i = 1; i <= 8; i++) {
+        if (konto.abheben(1500)) {
+            writeln("1500 wurden abgehoben  -- " + konto);
+        } else {
+            writeln("1500 koennen nicht abgehoben werden -- " + konto);
+        }
+    }
+
+    konto.einzahlen(10000);
+    writeln(konto);
+    writeln(konto.getInhaber());
+    writeln(konto.getSaldo());
+</script>
+
+</body>
+
+</html>
