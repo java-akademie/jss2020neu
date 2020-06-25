@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+    <h3>Objekt im Objekt</h3>
+
+    <script>
+        function Adresse(ort, strasse) {
+            // Attribute
+            this.ort = ort;
+            this.strasse = strasse;
+
+            // Methoden (im ggs zu anonymen Methoden s.j03-02) besser
+            this.toString = _adresseToString;
+            this.show = _adresseAusgeben;
+        }
+
+        function _adresseToString() {
+            let s = "";
+            s += (this.ort === undefined ? "-" : this.ort) + " / ";
+            s += (this.strasse === undefined ? "-" : this.strasse) + "";
+            return s;
+        }
+
+        function _adresseAusgeben() {
+            document.write(this + "<br />");
+        }
+    </script>
+
+    <script>
+        function Person(name, salaer, adresse) {
+            // Attribute
+            this.name = name;
+            this.salaer = salaer; // Achtung: Fehlermoeglichkeit
+            this.adresse = adresse;
+
+            // Methoden
+            this.toString = _personToString;
+            this.show = _personAusgeben;
+        }
+
+        function _personToString() {
+            let s = "";
+            s += (this.name === undefined ? "-" : this.name) + " / ";
+            s += (this.salaer === undefined ? "-" : this.salaer) + " / ";
+            s += (this.adresse === undefined ? "-" : this.adresse) + "";
+            return s;
+        }
+
+        function _personAusgeben() {
+            document.write(this + "<br />");
+        }
+    </script>
+
+    <script>
+        let a1 = new Adresse("berlin", "gartenstrasse 12");
+        a1.show();
+        let p1 = new Person("fritz", 2345, a1);
+        let p2 = new Person("hugo", 6743, new Adresse("basel", "am hof 22"));
+        p1.show();
+        p2.show();
+        p1.adresse.show();
+        p2.adresse.show();
+    </script>
+
+</body>
+
+
+</html>

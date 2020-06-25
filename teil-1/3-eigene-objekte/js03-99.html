@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <script>
+        function check(p){
+            writeln(p + "  "+ checkInteger(p))
+        }
+        check(1)
+        check("1")
+        check("                  1")
+        check("1 ")
+        check(" 1.5              ")
+        check(" hugo ")
+        check(1)
+        check(null)
+        check("     000123            ")
+
+        writeln(allInteger("999999999999999999999"))
+        writeln(allInteger("12345"))
+
+
+    </script>
+</body>
+
+</html>

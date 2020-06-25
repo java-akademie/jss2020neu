@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jss</title>
+    <script src="../../_js/myfunctions.js"></script>
+    <script src="../../_js/mynumbers.js"></script>
+</head>
+
+
+<body>
+    <div id="error" style="color: red; font-size: 20px"></div>
+
+    <h3>Methoden im Objekt</h3>
+
+    <script>
+        function Person(name, ort, strasse, salaer) {
+            // -----------
+            // Attribute
+            // -----------
+            this.name = name;
+            this.ort = ort;
+            this.strasse = strasse;
+
+            if (isNaN(salaer))
+                this.salaer = 0;
+            else
+                this.salaer = salaer;
+
+            // ---------
+            // Methoden         
+            // ---------
+            this.setSalaer = function(salaer) {
+                if (isNaN(salaer))
+                    this.salaer = 0;
+                else
+                    this.salaer = salaer;
+            };
+
+            this.toString = function() {
+                let s = "";
+                s += (this.name === undefined ? "na.name" : this.name) + " / ";
+                s += (this.ort === undefined ? "na-ort" : this.ort) + " / ";
+                s += (this.strasse === undefined ? "na-strasse" : this.strasse) + " / ";
+                s += (this.salaer === undefined ? "na-salaer" : this.salaer) + " / ";
+                s += "<br />";
+                return s;
+            };
+
+            this.show = function() {
+                document.write(this.toString());
+            };
+        }
+
+        let p1 = new Person("fritz", "berlin", "gartenstrasse 12", "111");
+        p1.show();
+        delete p1.ort; // attribut ort wird entfernt
+        p1.show();
+
+        let p2 = new Person("hugo", "berlin", "gartenstrasse 12", 2345.75);
+        p2.show();
+        p2.setSalaer(p2.salaer * 1.1125); // + 11.25 Prozent
+        p2.show();
+        p2.setSalaer("hugo"); // hugo ist ungueltig 
+        p2.show();
+    </script>
+
+</body>
+
+
+</html>
