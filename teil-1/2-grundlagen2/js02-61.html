@@ -25,12 +25,12 @@
         ueberschrift("personen1 - for (let i=0; i &lt; personen1.length; i++)");
         for (let i = 0; i < personen1.length; i++) {
             writeln(i + " :: " + personen1[i]);
-        };
+        }
 
         ueberschrift("personen1 - for (key in personen1)");
-        for (key in personen1) {
-            writeln(key + " :: " + personen1[key]);
-        };
+        for (let k in personen1) {
+            writeln(k + " :: " + personen1[k]);
+        }
     </script>
 
 
@@ -53,7 +53,8 @@
     </script>
 
     <script>
-        let personen3 = new Array("meier", "gruber", "schuster");
+        let personen3 = ["meier", "gruber", "schuster"];
+
         personen3["fritz 1"] = "fritz meier";
         personen3["fritz 2"] = "fritz mueller";
         personen3.hans1 = "hans dampf";
@@ -65,10 +66,10 @@
         ueberschrift("personen3 - for (let i=0; i &lt; personen3.length; i++)");
         for (let i = 0; i < personen3.length; i++) {
             writeln(personen3[i]);
-        };
+        }
 
         ueberschrift("personen3 - for (key in personen3)");
-        for (key in personen3) {
+        for (let key in personen3) {
             writeln(key + " :: " + personen3[key]);
         }
     </script>

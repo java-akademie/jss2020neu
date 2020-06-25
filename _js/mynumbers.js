@@ -3,18 +3,17 @@
 
 /**
  * Prüfen ob ein eingegebener Wert eine
- * gültige Ganzzahl ist. 
+ * gültige Ganzzahl ist.
  */
 function checkInteger(p) {
-    const inp = p + ""; // macht aus p einen string damit trim() funktioniert
-    if (inp == null || inp.trim() == "" || isNaN(inp))
-
-        ;
-    else if (Number.isInteger(inp * 1))
-        return true;
-
-    console.log(p, "not an Integer")
-    return false;
+    let inp = p;
+    if (inp === null) return false
+    inp = inp + ""; // macht aus p einen string damit trim() funktioniert
+    inp = inp.trim()
+    if (inp === "") return false
+    inp = inp * 1  // p zu number machen (wenn moeglich sonst NaN)
+    if (isNaN(inp)) return false
+    return Number.isInteger(inp);
 }
 
 
@@ -23,14 +22,13 @@ function checkInteger(p) {
  * gültige Dezimalzahl ist.
  */
 function checkFloat(p) {
-    const inp = p + ""; // macht aus inp einen string damit trim() funktioniert
-    if (inp == null || inp.trim() == "" || isNaN(inp))
-    ;
-    else
-        return true;
-
-    console.log(p, "not an Integer")
-    return false;
+    let inp = p
+    if (inp === null) return false
+    inp = inp + ""; // macht aus p einen string damit trim() funktioniert
+    inp = inp.trim()
+    if (inp === "") return false
+    inp = inp * 1  // p zu number machen (wenn moeglich sonst NaN)
+    return !isNaN(inp);
 }
 
 
@@ -40,24 +38,22 @@ function checkFloat(p) {
  */
 function allInteger(p) {
     // Laenge muss groesser 0 sein
+    // Laenge kann beliebig lang sein
     // alle muessen numerisch sein
     // Nullen zu Beginn sind erlaubt (bspw: 00228)
-    let ok = true;
-    const inp = p + ""; // macht aus inp einen string damit trim() funktioniert
-    if (inp == undefined || inp == null || inp.trim() == "")
-        ok = false;
-    else
-        for (let i = 0; i <= inp.length; i++) {
-            if (isNaN(inp.substr(i, 1))) ok = false;
-        }
 
-    if (!ok) {
-        console.log(p, "not Integers")
+    if (p === null) return false
+    p = p + ""; // macht aus p einen string damit trim() funktioniert
+    p = p.trim()
+    if (p === "") return false
+
+    for (let i = 0; i < p.length; i++) {
+        let z = p.substr(i, 1) * 1 // soll ein number werden
+        if (isNaN(z)) return false;
     }
 
-    return ok;
+    return true;
 }
-
 
 
 /**
@@ -106,11 +102,19 @@ function runden(zahl, nachkommastellen) {
  */
 function form(z, stellen, x) {
     zahl = z + "";
-    if (!allInteger(zahl)) { return z; }
-    if (!checkInteger(stellen)) { return z; }
+    if (!allInteger(zahl)) {
+        return z;
+    }
+    if (!checkInteger(stellen)) {
+        return z;
+    }
     const vl = stellen - zahl.length;
-    if (vl <= 0) { return z; }
+    if (vl <= 0) {
+        return z;
+    }
     let vlv = "";
-    for (let i = 1; i <= vl; i++) { vlv = x + vlv; }
+    for (let i = 1; i <= vl; i++) {
+        vlv = x + vlv;
+    }
     return vlv + zahl;
 }

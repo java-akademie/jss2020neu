@@ -14,41 +14,6 @@
 <body>
     <div id="error" style="color: red; font-size: 20px"></div>
 
-    <h3>Ojkekt mit Funktionen</h3>
-
-    <h4>Deklaration</h4>
-
-    <script>
-        let auto = {
-            marke: "fiat",
-            type: 500,
-            preis: 10000,
-            leistung: 98,
-            toString: function() {
-                return this.marke + " " + this.type + ", " +
-                    this.leistung + " PS, Preis: " + this.preis;
-            },
-            show: function() {
-                writeln(this.toString());
-            },
-            faehrt: function() {
-                writeln(this.marke + "  faehrt ...");
-            }
-        };
-    </script>
-
-    <h4>Verwendung</h4>
-
-    <script>
-        writeln(auto);
-        writeln(auto.toString());
-        auto.faehrt();
-        auto.show();
-        writehx("for (a in auto)");
-        for (a in auto) {
-            writeln(a + " : " + auto[a]);
-        }
-    </script>
 </body>
 
 </html>

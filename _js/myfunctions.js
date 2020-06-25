@@ -79,7 +79,7 @@ function writeln(text) {
  * 64-stellig mit vorlaufenden Punkten    z.B. ........110100101
  */
 function binaerwertAusgeben(dezwert) {
-    let binaerwert = dezwert.toString();
+    let binaerwert = dezwert.toString(2); // 2-er darstellung
     let punkte = "";
     for (let i = 1; i <= 64 - binaerwert.length; i++) {
         punkte = punkte + ".";

@@ -35,15 +35,15 @@
             writeln("<code>");
             writeln("dict.length: " + laenge(dict));
             console.log("\n---- dict.length: " + laenge(dict));
-            for (k in dict) {
-                console.log(showKey(k),
-                    typeof dict[k], " :: ",
-                    dict[k], "::",
-                    JSON.stringify(dict[k]));
-                writeln(showKey(k) +
-                    typeof dict[k] + " :: " +
-                    dict[k] + " :: " +
-                    JSON.stringify(dict[k]));
+            for (let schl in dict) {
+                console.log(showKey(schl),
+                    typeof dict[schl], " :: ",
+                    dict[schl], "::",
+                    JSON.stringify(dict[schl]));
+                writeln(showKey(schl) +
+                    typeof dict[schl] + " :: " +
+                    dict[schl] + " :: " +
+                    JSON.stringify(dict[schl]));
             }
             writeln("</code>");
         }
