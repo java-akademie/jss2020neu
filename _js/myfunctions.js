@@ -5,8 +5,13 @@
  */
 let fehler = "";
 let count = 0;
-window.onerror = function(message, source, lineno, colno, error) {
+window.onerror = function (message,
+                           source,
+                           lineno,
+                           colno,
+                           error) {
     count++;
+    console.log(count, message, source, lineno, colno, error);
     fehler = fehler + count + ". Fehler: <br />" + message + " at <br />" +
         source + "<br />lineno " + lineno + "<br /><br />";
     document.getElementById("error").innerHTML = fehler;
@@ -41,10 +46,8 @@ function ausgeben(name, value) {
         name += " ";
     }
 
-    console.log(name + " :: " + typeof(value) + " :: " + value);
+    console.log(name + " :: " + typeof (value) + " :: " + value);
 }
-
-
 
 
 /**
@@ -59,7 +62,7 @@ function ueberschrift(text) {
  */
 function ausgebenEval(ausdruck) {
     let erg = eval(ausdruck);
-    document.write(ausdruck + " :: " + typeof(erg) + " :: " + erg + "<br />");
+    document.write(ausdruck + " :: " + typeof (erg) + " :: " + erg + "<br />");
 }
 
 
@@ -73,12 +76,12 @@ function writeln(text) {
 
 /**
  * Ausgabe Binärwert eines Dezimalwertes
- * 64-stellig mit vorlaufenden Punkten 	z.B. ........110100101
+ * 64-stellig mit vorlaufenden Punkten    z.B. ........110100101
  */
 function binaerwertAusgeben(dezwert) {
-    let binaerwert = dezwert.toString(2);
+    let binaerwert = dezwert.toString();
     let punkte = "";
-    for (var i = 1; i <= 64 - binaerwert.length; i++) {
+    for (let i = 1; i <= 64 - binaerwert.length; i++) {
         punkte = punkte + ".";
     }
     let outp = punkte + binaerwert;
@@ -118,8 +121,8 @@ function binAusg2(ueb, vz) {
  * schreiben einer Ueberschrift <h1> bis <h5> Zeile
  */
 function writehx(text, i = 5) {
-    if (!checkInteger(i)) i = 5;
-    else if (i < 1 || i > 5) i = 5;
-    else; // i bleibt wie’s ist	
+    if (!checkInteger(i) || i < 1 || i > 5)
+        i = 5;
+
     document.write("<h" + i + ">" + text + "</h" + i + ">");
 }

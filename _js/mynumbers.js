@@ -8,7 +8,8 @@
 function checkInteger(p) {
     const inp = p + ""; // macht aus p einen string damit trim() funktioniert
     if (inp == null || inp.trim() == "" || isNaN(inp))
-    ;
+
+        ;
     else if (Number.isInteger(inp * 1))
         return true;
 
